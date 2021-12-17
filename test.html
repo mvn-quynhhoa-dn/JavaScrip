@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=”demo.js”></script>
+</head>
+<body>
+    <h3>  1. What are the differences between a variable that is: `null`, `undefined`?</h3>
+    <h3>undefined có nghĩa là một biến đã được khai báo nhưng chưa được gán giá trị</h3>
+    <h3>null là một giá trị gán. Nó có thể được gán cho một biến dưới dạng đại diện không có giá trị</h3>
+    <h3> 2.What is 'use strict'? what are the advantages and disadvantages to using it?</h3>
+    <h3>"use strict" chỉ là một chuỗi, để chỉ ra rằng mã phải được thực thi ở "use strict"</h3>
+    <h3>thuận lợi: -Nó bắt một số blooper mã hóa phổ biến, đưa ra các ngoại lệ.
+       - Nó ngăn chặn hoặc ném lỗi khi các hành động tương đối “không an toàn” được thực hiện (chẳng hạn như giành quyền truy cập vào đối tượng toàn cục).
+       - Nó vô hiệu hóa các tính năng khó hiểu hoặc thiếu suy nghĩ.</h3>
+    <h3>Bất lợi: - ngặt ngăn bạn thực hiện một số việc nhất định.
+       -Nếu nhà phát triển sử dụng thư viện ở chế độ nghiêm ngặt, nhưng nhà phát triển đã quen làm việc ở chế độ bình thường, họ có thể gọi một số hành động trên thư viện không hoạt động như mong đợi .</h3>
+        <h3>3.What are the differences between `==` and `===`? Write an example for each case (if any)?</h3>
+        <h3>== là trả về true</h3>
+        <h3>=== là trả về false</h3>
+        <h3> ví dụ</h3>
+        <script>
+            document.write(9 == "9");
+            document.write('<br>')
+            document.write(9 === "9");
+        </script>
+        <h3>Give a list of `Falsy` values in Javascript ?</h3>
+        <h3>false, 0, -0, 0n, "", '',``, vô giá trị, chưa xác định, NanN, document.all</h3>
+        <h3>var zero = 0;</h3>
+        <!--map --> 
+        
+        <p id="demo"></p>
+        <script>
+            const myArray=[1,2,3,4];
+            const myArrayTimesTwo = myArray.map((value,index,array)=>{
+                return value * 2;
+            });
+          console.log(myArray);   // [1,2,3,4]
+         console.log(myArrayTimesTwo); // [2,4,6,8]
+            
+
+        </script>
+
+          <!--filter --> 
+         <script>
+            const Array=[1,2,3,4];
+            const myArrayTimes = myArray.filter((value,index,array)=>{
+                return value % 2 ===0 ;
+            });
+          console.log(myArray); // [1,2,3,4]
+            console.log(myArrayTimes); // [2,4]
+            
+
+        </script>
+
+         <!--reduce  nhận vào 1 mảng và tính toán thành một giá trị duy nhất --> 
+         <script>
+            const Array1=[1,2,3,4];
+            const  sum =  myArray.reduce((acc, currValue, currIndex, array)=>{
+                return acc + currValue;
+            },0);
+            const avg =sum / Array1.length;
+            console.log(avg); // [2.5]
+            
+        </script>
+            <!--find --> 
+        <script>
+            const trees = [ 
+             "birch", 
+            "maple", 
+            "oak", 
+            "poplar" 
+        ];
+
+            const resultFind = trees.find(tree => tree.startsWith("m"));
+        </script>
+
+          <!--some --> 
+        <script>
+            const array = [1, 2, 3, 4, 5];
+ 
+            // Hàm kiểm tra một phần tử có chia hết cho 2 hay không
+            const even = (element) => element % 2 === 0;
+  
+            console.log(array.some(even));
+            // output: true
+        </script>
+
+        <h3>4. Give an example for add a new element to an array[] (at the end)?</h3>
+        <script>
+            var arr = [
+                "Hi",
+                 "Hello",
+                 "Bonjour"
+                 //ChaoBan!
+                    ];
+
+                arr.push("ChaoBan!"); 
+
+                console.log(arr);
+        </script>
+        <h3>5. Give an example for add a new element to an array[] (at the beginning)</h3>
+        <script>
+            const array2 = [3, 2, 1]
+            const newFirstElement = 4
+            const newArray = [newFirstElement].concat(array2) // [ 4, 3, 2, 1 ]
+            console.log(newArray);
+        </script>
+        <h3>6. Give an example for removing an element in array[]</h3>
+        <script>
+            var ar = [1, 2, 3, 4, 5, 6];
+             ar.pop(); //pop loại bỏ phần tử cuối [1, 2, 3, 4, 5]
+            console.log( ar );
+        </script>
+
+        <h3>1. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.</h3>
+        <script>
+            function sumTriple (x, y) {
+            if (x == y) {
+            return 3 * (x + y);
+                } 
+            else {
+                return (x + y);
+                 }
+                 }
+            console.log(sumTriple(5, 10));
+            console.log(sumTriple(5, 5));
+            
+        </script>
+
+        <h3>2. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19.
+​       </h3>
+                 <script>
+                     function diff_num(n) {
+                        if (n <= 19) {
+                            return (19 - n);
+                            }
+                        else{
+                        return (n - 19) * 3;
+                        }
+                    }
+                        console.log(diff_num(12));
+                        console.log(diff_num(19));
+                        console.log(diff_num(22));
+                 </script>
+
+                 <h3>3. A masked number is a string that consists of digits and one asterisk (*) that should be replaced by exactly one digit. Given a masked number find all the possible options to replace the asterisk with a digit to produce an integer divisible by 3.</h3>
+                 <script>
+                     
+                 </script>
+</body>
+</html>
