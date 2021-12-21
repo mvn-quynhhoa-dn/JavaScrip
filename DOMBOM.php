@@ -67,13 +67,14 @@
 </div>
 </form>
 <script>
+   
     
     let hienthi = [
         {
             id:'01',
             sanpham:'máy tính',
             khuyenmai:'20%',
-            xuly:'<button class="" id="btn-x">XOÁ</button>'
+         //   xuly:'<button class="" id="btn-x">XOÁ</button>'
             
             
         },
@@ -81,13 +82,13 @@
             id:'02',
             sanpham:'điện thoại',
             khuyenmai:'20%',
-            xuly:'<button class="" id="btn-x">XOÁ</button>'
+         //   xuly:'<button class="" id="btn-x">XOÁ</button>'
         },
         {
             id:'03',
             sanpham:'TIVI',
             khuyenmai:'10%',
-            xuly:'<button class="" id="btn-x">XOÁ</button>'
+        //    xuly:'<button class="" id="btn-x">XOÁ</button>'
            
         }
         
@@ -110,7 +111,7 @@
     tdElement3.innerHTML=hienthi[i].khuyenmai
 
     let tdElement4=document.createElement("td")
-    tdElement4.innerHTML=hienthi[i].xuly
+    tdElement4.innerHTML = '<button onclick="Delete(' + hienthi[i].id + ')" >XOÁ</button>';
 
     
 
@@ -123,6 +124,8 @@
     tdBody.appendChild(trElement)
     
     }
+
+   
 </script>
        
 
@@ -134,6 +137,7 @@
     productItem.addEventListener('click', function(){
       //  alert('bạn có muốn xoá không');
         window.confirm("bạn có muốn xoá không");
+       
     });
 </script>
 </body>
