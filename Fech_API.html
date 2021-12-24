@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>fech API</h1>
+    <table id="js-demo"></table>
+    <button onclick="getUsers()">Load data</button>
+
+    <script >
+        function getUsers(){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function(){
+                const users = JSON.parse(this.response).data;
+               let tableContent = `<thead>  
+                <tr> 
+                    <th>First Name</th> 
+                    <th>Last Name</th>  
+                    <th>Email</th> 
+                    <th>Avatar</th>  
+              </tr>  
+                  </thead>  `;
+               
+               tableContent += "<tbody>";
+               users.forEach((users) => {
+                   tableContent += `<tr> 
+                       <td>${users.first_name}</td>
+                       <td>${users.last_name}</td>
+                       <td>${users.email}</td>
+                       <td><img src="${users.avatar}" alt="${users.first_name}" /></td> 
+                       </tr>`;
+                   
+                   });
+               tableContent += "</tbody>";
+               document.getElementById("js-demo").innerHTML = tableContent;
+           
+            };   
+            xhttp.open("GET", "https://reqres.in/api/users", true);
+            xhttp.send();
+        }
+        
+    </script>
+</body>
+</html>
